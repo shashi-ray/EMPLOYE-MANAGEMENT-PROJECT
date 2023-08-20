@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block start %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADD EMPLOYE</title>
+    <link rel="stylesheet" href="{% static 'add.css' %}">
+</head>
+
+<body>
+    <h1>ADD AN EMPLOYE</h1>
+    <div>
+    <form action="/add_emp/" method="post">
+        {% csrf_token %}
+        <label for="name">NAME</label><br>
+        <input type="text" id="name" name="name" value="{{name}}"><br>
+        <label for="salary">SALARY</label><br>
+        <input type="number" id="salary" name="salary" value="{{salary}}"><br>
+        <label for="dept" class="form-label">DEPT</label><br>
+        <input type="text" id="dept" name="dept"value="{{dept}}"><br>
+        <label for="role" class="form-label">ROLE</label><br>
+        <input type="text" id="role" name="role" value="{{role}}"><br>
+        <hr>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+</body>
+
+</html>
+{% endblock %}

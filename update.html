@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block start %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UPDATE</title>
+    <link rel="stylesheet" href="{% static 'add.css' %}">
+</head>
+<body>
+    <div>
+        <form action="/update_employe/{{emps.id}}/" method="post">
+            {% csrf_token %}
+            <label for="name">NAME</label><br>
+            <input type="text" id="name" name="name" value="{{emps.name}}"><br>
+            <label for="salary">SALARY</label><br>
+            <input type="number" id="salary" name="salary" value="{{emps.salary}}"><br>
+            <label for="dept" class="form-label">DEPT</label><br>
+            <input type="text" id="dept" name="dept"value="{{emps.dept}}"><br>
+            <label for="role" class="form-label">ROLE</label><br>
+            <input type="text" id="role" name="role" value="{{emps.role}}"><br>
+            <hr>
+            <button type="submit" class="btn btn-success">UPDATE</button>
+        </form>
+    </div>
+        
+</body>
+</html>
+{% endblock %}

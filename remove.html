@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block start %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'add.css' %}">
+   
+</head>
+
+<body>
+    <h4>Select an Employe to be Removed</h4>
+<div class="btn-group">
+    <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+      Employe List
+    </button>
+    <ul class="dropdown-menu">
+        {% for i in emps %}
+      <li><a class="dropdown-item" href="/remove_emp/{{i.id}}">{{"("}}{{i.id}}{{")"}}{{" "}}{{i.name}}{{"->"}}{{i.dept}}</a></li>
+      {% endfor %}
+    
+    </ul>
+  </div>
+</body>
+</html>
+{% endblock %}
+

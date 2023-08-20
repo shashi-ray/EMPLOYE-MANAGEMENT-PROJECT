@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block start %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME VIEW</title>
+    <link rel="stylesheet" href="{% static 'index.css' %}">
+</head>
+
+<body>
+    <!-- <a class="container"> -->
+    <h1>EMPLOYE MANAGEMENT PAGE</h1>
+    <a class="btn btn-success" href="{% url 'view_all' %}" role="button">VIEW ALL EMPLOYE</a>
+    <a class="btn btn-success" href="{% url 'add_employe' %}" role="button">ADD EMPLOYE</a>
+    <a class="btn btn-success" href="{% url 'filter_employe' %}" role="button">FILTER EMPLOYE</a>
+    <a class="btn btn-success" href="{% url 'remove_employe' %}" role="button">REMOVE EMPLOYE</a>
+</a>
+</body>
+
+</html>
+{% endblock %}
